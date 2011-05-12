@@ -1,0 +1,412 @@
+3. In this example the data-string is the three-byte string consisting of the ASCII-coded version of 'abc'.
+
+The 8x8 matrix Z' derived from the data-string is as follows.
+    61 62 63 80 00 00 00 00
+    00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 18
+
+The K_0 matrix (from the initialization value IV) and X'' matrix are as follows.
+    00 00 00 00 00 00 00 00        61 62 63 80 00 00 00 00
+    00 00 00 00 00 00 00 00        00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00        00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00        00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00        00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00        00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00        00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00        00 00 00 00 00 00 00 18
+
+The following are (hexadecimal representations of) the successive values of the variables K_i for i = 1 to 10 and W'.
+
+i = 1:
+    30 0B EE C0 AF 90 29 67        0F 34 9A FF 3F F3 2F E0
+    28 28 28 28 28 28 28 28        EB CD CD 13 CD 26 DE 87
+    28 28 28 28 28 28 28 28        2D 2C 98 98 5A 98 B4 C2
+    28 28 28 28 28 28 28 28        89 03 83 8F 8F 06 8F 0C
+    28 28 28 28 28 28 28 28        00 00 00 00 00 00 00 00
+    28 28 28 28 28 28 28 28        00 00 00 00 00 00 00 00
+    28 28 28 28 28 28 28 28        05 14 05 28 11 0A 2D 05
+    28 28 28 28 28 28 28 28        00 00 00 00 00 00 00 00
+
+i = 2:
+    3B AB 89 F8 EA D1 AE 24        1D 0D 4C DA 43 F6 B0 98
+    44 45 45 66 45 E9 CB AF        E4 5E 3F B8 7B C7 AA 10
+    70 FE A4 A4 C5 A4 B2 89        C3 31 D1 56 FD E7 7B 8F
+    C5 FA A9 E1 E1 CC E1 A0        68 2F 47 A1 BE 4A 53 39
+    48 AC C0 5C FC FC B8 FC        B2 A2 B8 2F 20 72 F0 6C
+    8F F7 0E 26 90 8F 8F 69        03 D9 F4 6C 67 B1 79 72
+    96 79 14 07 D7 85 79 79        2C 67 87 6E FD 5C 25 F8
+    F8 A8 F8 68 B8 C8 78 F8        44 E6 4C 70 50 7C D8 26
+
+i = 3:
+    D3 19 BF DB 30 46 70 58        EF ED 35 67 80 8E 8D 63
+    29 5B 23 D1 AF CF 37 DB        2F 03 49 91 5B 18 5C 24
+    01 2C 8A C2 8B 95 AC 98        77 96 F6 03 BF AA F8 E3
+    81 63 9E B1 C0 B2 06 A7        0A DC 04 7B 58 5A A5 A1
+    44 5E 60 7A B0 B2 09 DB        47 96 DA 7F 56 E4 CC 29
+    73 5B 2C CF BC 8C BC 71        20 70 D5 D8 50 01 C8 98
+    DC 67 09 24 EF ED DD D3        A7 4C 23 FA F6 81 49 A1
+    7B 8D 3B F0 D7 3B 7D 19        4A CE 46 7D 7D B0 73 A9
+
+i = 4:
+    38 BE AA C1 DE 11 65 86        95 BD DE 1E CA 0F CA 19
+    68 7C F3 D0 4A 87 33 7F        D3 C1 CF 6C A0 2E 41 E8
+    F3 37 FA DB 98 AD F0 57        74 C3 5C 63 15 C5 B9 8A
+    C5 E2 42 58 EE 35 8D BC        36 F0 4E 42 FE 2D D0 5E
+    11 09 F0 E8 99 6E 24 7E        0A 3C 50 76 A1 91 F8 EC
+    01 C5 D6 ED 10 B0 34 01        48 6B C7 3E 61 D2 A4 DC
+    FB C9 52 F1 7B 28 EC D3        ED B8 F0 C5 2C F0 5C 72
+    32 56 DC 0C C7 F1 27 40        FA 3D 00 D4 FB 9A 66 FF
+
+i = 5:
+    AF 25 A5 20 94 9B CF 14        06 A6 BA 18 05 54 8D 33
+    C1 36 26 A9 E3 C4 53 4D        84 55 FE C4 1F B2 0B 1C
+    E6 0F 7D 86 77 40 F9 E1        6E A2 93 49 3F 17 89 B7
+    91 5D E6 BB E2 6A 06 29        7D 02 C9 A0 52 85 BB EF
+    96 5A 54 CC 4C FE 5E 8D        AC 55 D7 A9 44 48 89 A9
+    BE E9 31 CB 62 32 3A A6        CB DE BE 43 AA 4D B5 A0
+    B1 7B 59 18 96 84 6A 47        60 A6 BA C0 25 D9 4F 8C
+    D4 F0 C9 36 27 59 AF 31        D7 E4 62 E5 D4 A8 CC C0
+
+i = 6:
+    E2 F9 B5 C0 25 37 0B B0        DB 1D A8 4A 33 38 4D B3
+    39 2B CB A2 16 84 94 A5        97 4C 8E 1A 3E 51 F3 48
+    60 8A F8 CE FA 34 8C 14        47 66 64 C2 33 F5 F2 A9
+    7A A5 37 64 41 8C 92 19        85 FD AA B1 D5 CB C3 6E
+    B3 F3 46 A1 FA 83 3F 89        5D 89 59 F2 E1 F8 71 D4
+    97 49 3F 48 78 02 CF 7C        8C 1F B9 78 8C 16 DD 05
+    DC AD E8 BA 1E 00 8F 23        62 AF 63 5F 6D EE D5 F4
+    92 77 4F 49 ED B0 32 3D        D8 5B 74 35 5F 8A 98 47
+
+i = 7:
+    75 41 63 82 77 4D FF 2F        59 3D 86 BD A8 CE 25 E5
+    FF FA 38 D0 55 03 46 00        BB 33 95 78 26 63 7D 82
+    BF 7D 02 49 3E 98 F3 61        EF 46 1D AE DC AD 0C 3C
+    F4 A8 60 C2 9A E5 CE 0B        AF A0 E2 86 5E 8B A3 F9
+    C8 DF 5A 44 EE 5D 9D 27        C8 8C 0B 43 27 84 31 F4
+    23 F4 5A 55 04 75 00 A4        41 5F 51 64 4E 55 78 C2
+    B0 16 10 12 02 F9 E2 8C        F4 C7 C3 B5 EE A4 C5 86
+    AC 30 CD 29 68 33 33 1D        49 F8 AB 68 4A 4C 96 B7
+
+i = 8:
+    03 6B F1 82 68 84 AD 89        9C 0D 38 97 73 B2 E4 35
+    99 40 C6 62 D8 46 71 63        4D 44 89 58 D4 59 27 E8
+    4C 43 3E 17 4B 19 C2 10        AD 59 2E B0 4C A3 63 32
+    E2 9C CF D3 4C FF 86 C5        E0 D4 70 F3 83 5A 15 59
+    21 FF 11 A0 42 DF 26 53        9A 92 69 8C 76 40 A1 51
+    1B 8E 00 CB 6C E4 4B 13        57 2E 81 EA CB A4 3C 36
+    A6 12 3B F7 A3 47 B7 CE        5D 63 2F A7 36 BE 4B 61
+    D9 18 90 0E 3B 28 33 CA        40 0F DA CB 8B 9D E3 8A
+
+i = 9:
+    D0 1C 67 7A 0A 9A 2C F9        4B F0 5E 9B 46 14 16 D0
+    2A 94 2F 53 4A 63 B6 B2        72 A8 C1 34 47 13 17 2D
+    88 42 22 46 FE AC A8 B4        17 33 2A 69 FB 34 98 98
+    47 4A 5C C7 3D 58 35 59        83 B1 EE 37 93 47 EC A0
+    74 A6 92 5D A5 5C 6F A1        3B 39 67 11 23 35 B5 78
+    77 17 E6 8C C4 73 5C 39        FC 78 3D 1F 9D 2F B6 AE
+    08 2A 3B 0B 53 EC 1A C6        3C F9 38 64 96 9B DE 6C
+    2A F6 58 EB 81 4D E7 62        42 5A D1 47 6C 0C 49 AE
+
+i = 10:
+    48 95 48 B6 01 EE BC 3A        2F 46 2B 24 C6 F4 86 BB
+    A5 0D 6B C6 6B ED 8E 81        16 B6 56 2C 73 B4 02 0B
+    E0 CE 3D CF 88 26 5A 75        F3 04 3E 3A 73 1B CE 72
+    C2 8C 4A DB C0 F6 9C E9        1A E1 B3 03 D9 7E 6D 4C
+    54 B7 9C D5 7F 71 85 13        71 81 EE BD B6 C5 7E 27
+    43 41 4B 8A 97 7D 0B 7B        7D 0E 34 95 71 14 CB D6
+    63 19 35 BB DB F6 15 7A        C7 97 FC 9D 95 D8 B5 82
+    6A 7A 4E F6 37 01 82 27        D2 25 29 20 76 D4 EE ED
+
+The value of Y' output from the round-function is as follows.
+    4E 24 48 A4 C6 F4 86 BB
+    16 B6 56 2C 73 B4 02 0B
+    F3 04 3E 3A 73 1B CE 72
+    1A E1 B3 03 D9 7E 6D 4C
+    71 81 EE BD B6 C5 7E 27
+    7D 0E 34 95 71 14 CB D6
+    C7 97 FC 9D 95 D8 B5 82
+    D2 25 29 20 76 D4 EE F5
+
+The hash-code is the following 512-bit string.
+
+
+ 4E2448A4C6F486BB 16B6562C73B4020B F3043E3A731BCE72 1AE1B303D97E6D4C
+ 7181EEBDB6C57E27 7D0E34957114CBD6 C797FC9D95D8B582 D225292076D4EEF5
+
+8. In this example the data-string is the 32-byte string consisting of the ASCII-coded version of 'abcdbcdecdefdefgefghfghighijhijk'.
+
+The 8x8 matrix Z' derived from the data-string is as follows.
+    61 62 63 64 62 63 64 65
+    63 64 65 66 64 65 66 67
+    65 66 67 68 66 67 68 69
+    67 68 69 6A 68 69 6A 6B
+    80 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00
+
+The K_0 matrix (from the initialization value IV) and X'' matrix are as follows.
+    00 00 00 00 00 00 00 00        61 62 63 64 62 63 64 65
+    00 00 00 00 00 00 00 00        63 64 65 66 64 65 66 67
+    00 00 00 00 00 00 00 00        65 66 67 68 66 67 68 69
+    00 00 00 00 00 00 00 00        67 68 69 6A 68 69 6A 6B
+    00 00 00 00 00 00 00 00        80 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00        00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00        00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00        00 00 00 00 00 00 00 00
+
+The following are (hexadecimal representations of) the successive values of the variables K_i for i = 1 to 10 and W'.
+
+i = 1:
+    30 0B EE C0 AF 90 29 67        86 B9 56 DD B4 BD 40 C2
+    28 28 28 28 28 28 28 28        0B 48 C1 2E 83 9C 2E 41
+    28 28 28 28 28 28 28 28        40 5E 0A ED 5C E9 42 E7
+    28 28 28 28 28 28 28 28        B2 1E 5B 93 43 07 7C 4D
+    28 28 28 28 28 28 28 28        19 04 67 A3 57 CF DA ED
+    28 28 28 28 28 28 28 28        59 36 7D 57 F8 E7 EA 60
+    28 28 28 28 28 28 28 28        98 D1 1B 6A C6 1C 4B CD
+    28 28 28 28 28 28 28 28        5E B9 76 56 F3 51 F4 43
+
+i = 2:
+    3B AB 89 F8 EA D1 AE 24        10 54 A2 C2 9E 00 80 4F
+    44 45 45 66 45 E9 CB AF        6B C6 9F 0A 98 41 BA 45
+    70 FE A4 A4 C5 A4 B2 89        6B 0B DE 38 1B F6 5A 3F
+    C5 FA A9 E1 E1 CC E1 A0        34 F5 52 E4 38 30 DA 32
+    48 AC C0 5C FC FC B8 FC        A7 4E 3B C9 F2 58 65 5B
+    8F F7 0E 26 90 8F 8F 69        2C 84 5C F8 DE BA 57 52
+    96 79 14 07 D7 85 79 79        0B 0B CB 4F 5F 5F 13 10
+    F8 A8 F8 68 B8 C8 78 F8        B4 43 90 D6 92 4F 65 12
+
+i = 3:
+    D3 19 BF DB 30 46 70 58        8F 55 E3 10 51 E9 E7 43
+    29 5B 23 D1 AF CF 37 DB        F3 AE 56 A1 2E 86 11 01
+    01 2C 8A C2 8B 95 AC 98        01 78 57 78 4C 25 EE 95
+    81 63 9E B1 C0 B2 06 A7        8B 13 D5 66 9A EA A5 53
+    44 5E 60 7A B0 B2 09 DB        55 E0 9A 46 78 79 57 56
+    73 5B 2C CF BC 8C BC 71        E2 3E F3 AF D4 5F 66 62
+    DC 67 09 24 EF ED DD D3        05 E9 CA 43 59 FC 08 53
+    7B 8D 3B F0 D7 3B 7D 19        6A 11 68 9A 3D 24 86 2C
+
+i = 4:
+    38 BE AA C1 DE 11 65 86        BD A3 5F AC C8 4B 7B 24
+    68 7C F3 D0 4A 87 33 7F        D4 D5 53 36 8A FA 90 C8
+    F3 37 FA DB 98 AD F0 57        7D 9A 3C 52 B5 B9 28 0B
+    C5 E2 42 58 EE 35 8D BC        FE CD D7 48 5D 98 AC 21
+    11 09 F0 E8 99 6E 24 7E        F6 D3 E3 F5 A1 C0 68 F0
+    01 C5 D6 ED 10 B0 34 01        D9 77 56 2D F1 C4 3C B6
+    FB C9 52 F1 7B 28 EC D3        C2 85 71 D3 B2 94 91 69
+    32 56 DC 0C C7 F1 27 40        E2 B9 81 C5 7C 60 42 23
+
+i = 5:
+    AF 25 A5 20 94 9B CF 14        15 03 B3 53 CF 70 04 4D
+    C1 36 26 A9 E3 C4 53 4D        D0 74 26 9B 60 EC 9B 92
+    E6 0F 7D 86 77 40 F9 E1        BE 22 90 B3 34 54 C2 84
+    91 5D E6 BB E2 6A 06 29        20 F3 7D 53 7D D1 C1 BA
+    96 5A 54 CC 4C FE 5E 8D        87 0E 9B F5 41 7C 2D 29
+    BE E9 31 CB 62 32 3A A6        A8 52 51 52 21 71 D5 9D
+    B1 7B 59 18 96 84 6A 47        96 9C 26 6D 4A B9 C6 AB
+    D4 F0 C9 36 27 59 AF 31        5A 2B DD 3C D9 8A D1 04
+
+i = 6:
+    E2 F9 B5 C0 25 37 0B B0        B1 44 C5 6B 09 97 59 91
+    39 2B CB A2 16 84 94 A5        CF 0D 2C 26 C0 C7 93 54
+    60 8A F8 CE FA 34 8C 14        18 D0 BE 9C 7A 35 09 8A
+    7A A5 37 64 41 8C 92 19        32 8B E8 B4 2C B0 10 2A
+    B3 F3 46 A1 FA 83 3F 89        02 01 B5 CC 2C 68 E9 9C
+    97 49 3F 48 78 02 CF 7C        12 BF E0 28 EB 7D 3F F1
+    DC AD E8 BA 1E 00 8F 23        49 BD 0B 4E 55 81 21 AA
+    92 77 4F 49 ED B0 32 3D        35 F4 59 17 F1 5C 49 DF
+
+i = 7:
+    75 41 63 82 77 4D FF 2F        DD D3 6C 6C F0 7A C1 16
+    FF FA 38 D0 55 03 46 00        03 42 87 2D A6 3A 4C F4
+    BF 7D 02 49 3E 98 F3 61        5D C0 C5 7D 6B BC 49 81
+    F4 A8 60 C2 9A E5 CE 0B        7C 12 58 40 F0 CD DA 1E
+    C8 DF 5A 44 EE 5D 9D 27        46 AD D5 C4 F9 77 40 C7
+    23 F4 5A 55 04 75 00 A4        FF 2E 7D 33 E9 7D 27 BA
+    B0 16 10 12 02 F9 E2 8C        2C CC DF EF 3A 86 58 08
+    AC 30 CD 29 68 33 33 1D        FB AC B4 52 D2 63 9C 25
+
+i = 8:
+    03 6B F1 82 68 84 AD 89        7B 3B 3C 7B 2D 73 FF 3C
+    99 40 C6 62 D8 46 71 63        32 7A 01 65 DD 7C 8C 7A
+    4C 43 3E 17 4B 19 C2 10        0F 70 81 E9 7B A3 B6 80
+    E2 9C CF D3 4C FF 86 C5        25 DF D5 33 66 08 A2 55
+    21 FF 11 A0 42 DF 26 53        AB 95 54 FC ED D2 51 92
+    1B 8E 00 CB 6C E4 4B 13        10 3A 15 9C FE CA CF 6E
+    A6 12 3B F7 A3 47 B7 CE        38 DA 67 14 8A 69 EB B3
+    D9 18 90 0E 3B 28 33 CA        92 2A 69 0B 03 4B 46 69
+
+i = 9:
+    D0 1C 67 7A 0A 9A 2C F9        56 21 86 2A 9C 0B D3 95
+    2A 94 2F 53 4A 63 B6 B2        D4 5A B8 28 42 F2 59 DC
+    88 42 22 46 FE AC A8 B4        B2 55 11 33 27 2D E8 43
+    47 4A 5C C7 3D 58 35 59        B7 2C 18 04 84 19 B2 C7
+    74 A6 92 5D A5 5C 6F A1        0A DD FF 03 52 91 16 83
+    77 17 E6 8C C4 73 5C 39        3E A7 8D 11 02 CF E8 C8
+    08 2A 3B 0B 53 EC 1A C6        A1 22 69 ED AD B3 2A B4
+    2A F6 58 EB 81 4D E7 62        BE 53 E9 F0 7C B0 79 E7
+
+i = 10:
+    48 95 48 B6 01 EE BC 3A        16 5A 82 D1 23 C3 52 8F
+    A5 0D 6B C6 6B ED 8E 81        26 E9 35 9E 6B C5 7A 23
+    E0 CE 3D CF 88 26 5A 75        17 EE A9 FF B7 C7 B4 99
+    C2 8C 4A DB C0 F6 9C E9        71 FD 96 BC 8F 74 63 4E
+    54 B7 9C D5 7F 71 85 13        B3 BE 30 9F 01 2A 59 09
+    43 41 4B 8A 97 7D 0B 7B        72 91 14 59 5F 08 6E 76
+    63 19 35 BB DB F6 15 7A        07 18 AF E3 65 BC 09 DE
+    6A 7A 4E F6 37 01 82 27        B6 AF A1 80 BC EC 2A 98
+
+The value of Y' output from the round-function is as follows.
+    77 38 E1 B5 41 A0 36 EA
+    45 8D 50 F8 0F A0 1C 44
+    72 88 CE 97 D1 A0 DC F0
+    16 95 FF D6 E7 1D 09 25
+    33 BE 30 9F 01 2A 59 09
+    72 91 14 59 5F 08 6E 76
+    07 18 AF E3 65 BC 09 DE
+    B6 AF A1 80 BC EC 2A 98
+
+The 8x8 matrix Z' derived from the data-string is as follows.
+    00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 01 00
+
+The K_0 matrix (from the initialization value IV) and X'' matrix are as follows.
+    77 38 E1 B5 41 A0 36 EA        77 38 E1 B5 41 A0 36 EA
+    45 8D 50 F8 0F A0 1C 44        45 8D 50 F8 0F A0 1C 44
+    72 88 CE 97 D1 A0 DC F0        72 88 CE 97 D1 A0 DC F0
+    16 95 FF D6 E7 1D 09 25        16 95 FF D6 E7 1D 09 25
+    33 BE 30 9F 01 2A 59 09        33 BE 30 9F 01 2A 59 09
+    72 91 14 59 5F 08 6E 76        72 91 14 59 5F 08 6E 76
+    07 18 AF E3 65 BC 09 DE        07 18 AF E3 65 BC 09 DE
+    B6 AF A1 80 BC EC 2A 98        B6 AF A1 80 BC EC 2B 98
+
+The following are (hexadecimal representations of) the successive values of the variables K_i for i = 1 to 10 and W'.
+
+i = 1:
+    1A 78 4D 7D BD 4C 17 E6        18 23 C6 E8 87 B8 01 4F
+    27 31 10 AA 63 C5 9E 25        00 00 00 00 00 00 00 00
+    7A 2E B7 48 C4 5D E0 23        00 00 00 00 00 00 00 00
+    6D 0D 61 9F 6C 1D 80 AE        00 00 00 00 00 00 00 00
+    01 A2 D5 6E DB 41 D9 A0        00 00 00 00 00 00 00 00
+    E9 06 4C D1 27 95 FA 86        8C 23 05 AF 46 26 23 23
+    77 62 31 BC B4 4E C6 01        00 00 00 00 00 00 00 00
+    6F CD BC 98 10 78 6F EC        00 00 00 00 00 00 00 00
+
+i = 2:
+    EB 0F 86 07 40 38 54 4F        DF 8A 74 7E 14 4C 22 D0
+    87 EF DC C8 FE 45 3D 83        2B 04 B7 AE 74 89 5A 13
+    99 0E F5 4E 73 1F C0 EA        2F FD BC A4 26 03 AD 74
+    EF E0 05 7F D2 C2 41 39        99 67 EA 50 34 08 BD B9
+    65 8F 5D 92 3E 9A AF 47        A8 7B 8E 1A 3B 56 CD 91
+    A9 1D 1C 13 BD 15 73 41        77 59 60 2D DD A2 4A 70
+    81 AD 80 BD 88 B3 B3 C3        03 43 90 91 2B DE 8E 37
+    16 26 63 99 AC 18 5D D0        48 6B C0 54 B9 C6 72 C9
+
+i = 3:
+    7A A3 A3 3A 99 FD F6 5E        6B 92 48 05 C3 F4 1A 6D
+    E0 78 67 CD 3E 60 BF A7        45 20 59 41 0D 59 73 6D
+    BC 06 8D 5D 98 70 34 84        AF 72 CF 6A 4B B6 11 F4
+    80 E8 69 7D 44 CF 6B E6        A2 6D AD C1 12 CC 43 6C
+    7E 35 09 07 AF 76 70 C3        95 8F C4 AE 60 94 74 74
+    3B 7E 15 0D CA 5E A9 0A        4B AB 72 C2 3E 2C BC 6D
+    8D 10 98 19 22 3B FC 57        ED BF 23 B0 D6 82 B0 E8
+    AB DE A9 DD D3 B6 68 14        C0 4B 32 6B B5 14 B7 BB
+
+i = 4:
+    3D 21 15 88 E4 48 75 78        78 5A 13 A3 25 81 79 C9
+    47 BF 56 CC 8E D4 63 CA        DC 69 90 E0 14 F2 39 AC
+    AE F0 D0 31 74 25 3C 4E        89 5A 8F 66 7F F9 FC E3
+    08 F7 59 13 4F 6D DD 37        3B 5C C5 02 8C 4D 96 0A
+    C9 70 32 87 D8 F2 C1 E8        00 28 03 E7 DA 63 5E F5
+    90 E9 2D 7C AB A0 8E A7        DA 35 A5 BF B6 AB C7 EA
+    BF 22 A6 93 C1 6E 34 74        0D 5B 90 B8 88 56 C7 9F
+    58 40 F3 10 BF 03 3C 14        65 09 D2 D8 ED DA C6 B1
+
+i = 5:
+    AE 58 59 43 80 F4 F6 14        6B 77 9A 58 6E 21 06 C1
+    14 5C 2E E0 5F B0 8E FD        A7 2D B3 6D 1D AD 9E 3C
+    CF B7 1F C1 9A AC 6B 6A        32 CF E9 10 D3 AD CD EB
+    92 5C 25 E7 6C 28 7B 6B        EE 4B 44 77 56 BC BC 63
+    57 B5 8E 30 FB E4 61 9B        41 05 39 5E 0B A3 8A 46
+    38 5D B4 49 F9 44 F8 C9        07 B9 8B 76 67 41 AC BD
+    A5 EE 29 38 0C 2D A8 70        E9 86 74 54 82 35 6F D9
+    45 8B FE 5E 05 C3 A6 89        27 FB C9 68 EE 1E C7 57
+
+i = 6:
+    B1 F3 E2 33 93 63 14 AC        53 41 C7 63 02 40 D8 3F
+    DD 80 87 12 BF E5 70 0E        7F D8 0D FB 5D 97 CF 7A
+    A5 F5 16 A8 2A 82 CC 76        52 47 5A 93 4A BC D9 84
+    8A F5 DD F3 5F B1 11 57        95 47 26 76 78 E9 10 42
+    62 34 D3 BC 57 72 C7 DC        E5 BA FB 23 2C 32 7B 6D
+    8D E2 8A 61 DC 88 CB 1A        62 CA FA 6D 35 F6 AA 13
+    53 35 F7 4C 99 ED 19 26        43 BF 3B F2 1B 0D B4 46
+    95 01 75 82 F7 A6 F7 2D        BC 1C 9F 38 97 77 17 5B
+
+i = 7:
+    7E 42 E3 38 39 72 B7 82        61 E7 C2 37 B0 E6 F6 2B
+    79 B2 EA 12 B3 68 75 B0        46 FE 01 CA 0E 34 5A 26
+    D8 8D 5F 05 2F AA 73 D2        80 2E F8 49 0D 5F 17 60
+    90 FC 91 61 30 BB 7B 5C        89 D5 48 F0 59 6D 73 E8
+    5A 1B F6 C2 20 10 61 23        72 D8 71 5E 44 80 9B E3
+    E5 31 C5 68 BC 4F 85 F8        8C 90 07 54 63 6B 77 0D
+    60 72 0A BA A7 90 27 03        63 1B 4E CF D7 C6 5D B5
+    A7 FD 03 BB E3 E9 CA 19        91 92 11 87 0F FE EA AB
+
+i = 8:
+    12 EF 8A A7 F3 B5 7E F6        42 C9 DC 71 10 DA FA 7C
+    E9 59 60 9F 18 84 D3 ED        02 5B 59 54 A2 45 83 20
+    93 3E 12 E9 EA 51 D7 C1        53 B6 C4 85 4D C3 52 A5
+    EF DA 8A 82 CB 14 13 93        3B 65 C0 24 87 E8 20 BD
+    4C F0 7B 81 0D 03 9C F3        C5 3C E3 C4 9C DE 93 9F
+    2F 40 9C A8 76 D4 7D A3        CD 47 4A B3 CB C3 69 1B
+    32 72 85 CE 7A BD 39 58        24 5E FB 0E 45 E6 7A 96
+    06 1A CE 00 E7 5F EC B5        2B 36 CC A8 8A 64 C1 40
+
+i = 9:
+    7C D9 89 12 FC AB 39 B2        AC C3 BD D6 26 A6 41 F0
+    20 E1 E9 E6 79 8D 5E 4F        E7 D8 5F 60 03 D2 7B F8
+    99 70 2C 2A CA E1 07 48        3F 48 9A 48 16 88 0E 1D
+    A4 85 C1 1F 74 6C 23 DC        D9 C7 62 1D 42 6F 86 A4
+    CF C8 1D F4 64 41 C6 1B        AD A6 9F 9A 29 CC 8C 6D
+    7B 0D 6B 84 2A 58 16 40        14 63 22 F6 04 B0 94 F4
+    4F 0A 55 C3 38 6A 0C 2D        E9 1D 7D 05 0C A8 44 F4
+    E6 31 16 BA AE C9 AC EC        A7 B1 5B F5 48 C5 2E F7
+
+i = 10:
+    B4 74 E1 56 96 31 B9 6C        5D A0 9F 11 4E 31 46 8B
+    21 A1 B6 33 CC 89 68 1A        B0 5B A0 58 EB C4 53 0C
+    B1 97 25 86 7B 2B 3F 09        F8 F2 94 C5 0F 4E B9 92
+    4C 73 C7 62 93 A8 15 CF        11 50 9D 2F 6F F4 55 4C
+    55 15 C0 C0 9A 05 05 16        25 03 F8 9C 1A EF E7 12
+    23 44 8D 8D D3 5F B3 6E        09 05 62 60 A1 0D 65 20
+    7E 6C 2D 37 12 D0 F3 3E        94 83 05 43 C8 43 93 38
+    CE B8 04 F2 8D 9F C9 99        C2 F4 DA 98 A0 D7 C8 65
+
+The value of Y' output from the round-function is as follows.
+    2A 98 7E A4 0F 91 70 61
+    F5 D6 F0 A0 E4 64 4F 48
+    8A 7A 5A 52 DE EE 65 62
+    07 C5 62 F9 88 E9 5C 69
+    16 BD C8 03 1B C5 BE 1B
+    7B 94 76 39 FE 05 0B 56
+    93 9B AA A0 AD FF 9A E6
+    74 5B 7B 18 1C 3B E3 FD
+
+The hash-code is the following 512-bit string.
+
+
+ 2A987EA40F917061 F5D6F0A0E4644F48 8A7A5A52DEEE6562 07C562F988E95C69
+ 16BDC8031BC5BE1B 7B947639FE050B56 939BAAA0ADFF9AE6 745B7B181C3BE3FD
+

@@ -1,0 +1,74 @@
+Convert this number from decimal to binary:  68
+68 - 64 =	4											01xxxxxx
+																01000100
+
+Convert this number from decimal to hexadecimal:  35
+35 / 16 = 2.1										0x002?
+35 - 16 * 2 = 3									0x0023
+
+Convert this number from binary to decimal:  10010010
+(signed)
+0010010 flipped 1101101
+							 -0000001
+							  1101100
+								7654321
+1 * 64 + 1 * 32 + 0 * 16 + 1 * 8 + 1 * 4 + 0 * 2 + 0 * 1
+											= -108
+								
+(unsigned)
+10010010
+87654321
+1 * 128 + 0 * 64 + 0 * 32 + 1 * 16 + 0 * 8 + 0 * 4 + 1 * 2 + 0 * 1
+											= 146
+
+Convert this number from binary to hexadecimal: 10100101
+(assumed to be unsigned, as signed hex numbers are silly)
+(broken into hex digits):
+1010 0101
+4321 4321
+
+1 * 8 + 0 * 4 + 1 * 2 + 0 * 1 = 10 -> A						0xA?
+0 * 8 + 1 * 4 + 0 * 2 + 1 * 1 = 5									0xA5
+
+Convert this number from hexadecimal to decimal: 112
+0x0112
+  4321
+
+0 * 4096 + 1 * 256 + 1 * 16 + 2 * 1 = 274
+
+Convert this number from hexadecimal to binary: BEAD
+0xBEAD
+  4321
+
+	B  * 4096 + E  * 256 + A  * 16 + D  * 1
+= 12 * 4096 + 15 * 256 + 10 * 16 + 14 * 1 = 53166
+
+???? ???? ???? ????
+ B		E		 A		D
+1011 1110 1010 1101 = 1011111010101101 (unsigned)
+
+1  1      1  1	
+2  2      2  16
+3  4      3  256
+4  8      4  4096
+5  16
+6  32
+7  64
+8  128
+
+0000 	0x0
+0001	0x1
+0010	0x2
+0011	0x3
+0100  0x4
+0101	0x5
+0110  0x6
+0111  0x7
+1000  0x8
+1001  0x9
+1010  0xA
+1011  0xB
+1100  0xC
+1101  0xD
+1110  0xE
+1111  0xF

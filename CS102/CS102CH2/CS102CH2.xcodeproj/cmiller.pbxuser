@@ -1,0 +1,90 @@
+// !$*UTF8*$!
+{
+	08FB7793FE84155DC02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = DA83A8780E758FDE00DF6D00 /* CS102CH2 */;
+		activeTarget = 8DD76F620486A84900D96B5E /* CS102CH2 */;
+		codeSenseManager = DA83A8830E758FE800DF6D00 /* Code sense */;
+		executables = (
+			DA83A8780E758FDE00DF6D00 /* CS102CH2 */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					341,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 243317534;
+			PBXWorkspaceStateSaveDate = 243317534;
+		};
+		sourceControlManager = DA83A8820E758FE800DF6D00 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	08FB7796FE84155DC02AAC07 /* main.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {691, 1552}}";
+			sepNavSelRange = "{37, 0}";
+			sepNavVisRange = "{118, 511}";
+			sepNavWindowFrame = "{{394, 194}, {750, 558}}";
+		};
+	};
+	8DD76F620486A84900D96B5E /* CS102CH2 */ = {
+		activeExec = 0;
+		executables = (
+			DA83A8780E758FDE00DF6D00 /* CS102CH2 */,
+		);
+	};
+	DA83A8780E758FDE00DF6D00 /* CS102CH2 */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = CS102CH2;
+		sourceDirectories = (
+		);
+	};
+	DA83A8820E758FE800DF6D00 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	DA83A8830E758FE800DF6D00 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+}
