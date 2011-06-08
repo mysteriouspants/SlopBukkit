@@ -1,0 +1,122 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf110
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Verdana;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 1. \
+\
+\pard\pardeftab720\ql\qnatural
+
+\f1\fs32 \cf0 class Point \{\
+private:\
+    double _x, _y;\
+public:\
+    Point(double x, double y)\
+           : _x(x), _y(y) \{\
+        \
+    \}\
+    double x() const \{ return _x; \};\
+    double y() const \{ return _y; \};\
+    void setX(double x) \{ _x = x; \};\
+    void setY(double y) \{ _y = y; \};\
+\};\
+\
+2.\
+\
+istream& operator >> (istream& is, Point& p) \{\
+    double x, y;\
+    is >> x >> y;\
+    p.setX(x);\
+    p.setY(y);\
+    return is;\
+\}\
+\
+int main(int args, char[] * arg_v) \{\
+    cout << "Enter seven x-y values" << endl;\
+    cout << "for example:" << endl;\
+    cout << "1: 12 11" << endl;\
+    vector<Point> originalPoints();\
+    Point p;\
+    for(size_t i=0; i<7; ++i) \{\
+        cout << i+1 << ": ";\
+        cin >> p;\
+        originalPoints.push_back(p);\
+    \}\
+    return 0;\
+\}\
+\
+3.\
+\
+ostream& operator << (ostream& os, Point& p) \{\
+    os << p.x() << " " << p.y();\
+    return os;\
+\}\
+\
+int main(int args, char[] * arg_v) \{\
+    /// ....\
+    for(size_t i=0; i< originalPoints.size(); ++i) \{\
+        Point p = originalPoints[i];\
+        cout << i << ": " << p << endl;\
+    \}\
+    return 0;\
+\}\
+\
+4.\
+\
+int main(int args, char[] * arg_v) \{\
+    // ...\
+    ofstream ost("mydata.txt");\
+    if(!ost) \{\
+        cerr << "Error opening output file.  Check permissions and space." << endl;\
+        return -1;\
+    \}\
+\
+    for(size_t i=0; i < originalPoints.size(); ++i)\
+        ost << originalPoints[i] << " ";\
+\
+    return 0;\
+\}\
+\
+5.\
+\
+int main(int args, char[] * arg_v) \{\
+    // ...\
+\
+    ost.close();\
+\
+    ifstream ist("mydata.txt");\
+    if(!ist) \{\
+        cerr << "Error reading file.  Check permissions and space" << endl;\
+        return -2;\
+    \}\
+    \
+    vector<Point> processedPoints();\
+    while(ist) \{\
+        Point p;\
+        ist >> p;\
+        processedPoints.push_back(p);\
+    \}\
+\
+    return 0;\
+\}\
+\
+6.\
+\
+int main(int args, char[] * arg_v) \{\
+     // ...\
+    \
+    if(processedPoints.size() != originalPoints.size()) \{\
+        cout << "Something is wrong!  The two vectors differ in length." << endl;\
+    \}\
+    \
+    for(size_t i=0; i < originalPoints.size() && i < processedPoints.size(); ++i) \{\
+        cout << i << ": Original: " << originalPoints[i] << " Serialized: " << processedPoints[i] << endl;\
+        if(processedPoints[i].x() != originalPoints[i].x() ||\
+           processedPoints[i].y() != originalPoints[i].y()) \{\
+            cout << "Something is wrong: points at " << i << " do not match!" << endl;\
+        \}\
+    \}\
+\
+    return 0;\
+\}}
