@@ -64,7 +64,7 @@ Personal favorite hash algorithm. Not sure where I got this code, but I've been 
 
 ## check-logger
 
-This is a streamlined data-entry tool written in Digital Mars D using the `tango` library and `dwt`, back before you could mix Tango and Phobos. It should build using my old Easy D project releases, which are available at http://cdn.fsdev.net/easy-d.
+This is a streamlined data-entry tool written in Digital Mars D using the `tango` library and `dwt`, back before you could mix Tango and Phobos. It should build using my old Easy D project releases, which are available at http://cdn.fsdev.net/easy-d
 
 ## source-scope
 
