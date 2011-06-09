@@ -46,9 +46,115 @@ ASCII-art theater seating chart program.
 
 Some kind of string manipulation exercise.
 
+## CS116
+
+I suppose some would call this course C++ II or something. It was fun. We used Bjarne Stroustrup's textbook _Practical Programming using C++_ (or some similar title - it's been a little while). The overall course was great. By using the FLTK library we were able to build simple GUI systems and stuff. Nothing quite so advanced as what I've done in Java or Cocoa, but it was neat to draw stuff to the screen using C++ for once.
+
+### AnalogClock
+
+This was the darn funniest thing ever. The assignment was to draw a clock to a window using FLTK. Now, I was fully aware of `FLClock`, which is an FLTK routine to draw an analog clock. However, I, in my paranoia, believed this to be _cheating_. And I do not cheat. Except at _Metro 2033_ and _Prototype_. So I spent a lot of time and effort figuring out some trig maths to figure all of this out. Professor Topham loved it, but had to admit that he was just expecting `FLClock` since the main point of the exercise was to update the screen periodically instead of lock-step with the FLTK user input main loop.
+
+The code is awesome though.
+
+### Book
+
+If anyone can understand what was going on here, that'd be nice. As far as I'm concerned, it's just more boring uninventive example classes.
+
+### Ch 14 Drill - Inheritance
+
+This was a fairly simple exercise in which we made a class which would draw a smily face. Following this we extended this class to make a smily face with a hat.
+
+### Ch14Asgn
+
+Some kind of exercise involving more inheritance and utilising a controller pattern.
+
+### Chapter 4 Drill
+
+I think this is some kind of conversion tool. Isn't it fun to look at old school code and try to reverse engineer what it was that you were doing?
+
+### Chapter 10 Drill
+
+Vectors, points, and `IOStream`, so it's anybody's guess what's going on here.
+
+### Chapter 12 Drill
+
+This one loads images.
+
+### Chapter 13 Asgn
+
+This one was pretty difficult because it involved drawing an arrow. Determining the proper place to stick the arrowhead and how to rotate it, etc, is pretty darn hard. Some supergenius in class got us an equation to use for that purpose, and it seems to work fairly well. Now that I've taken more Calculus (and ostensibly been molested by more trig) I'm sure I could do pretty well by myself now, but for the time, it was a Godsend. This appears to try and draw the reference image from http://cdn.fsdev.net/filegraph.png which is amazingly still hanging around on my CDN.
+
+This seems redundant to my `File Diagram` work in CS116, so I'm not sure what I have two copies for. But they're different. Judging by the naming and the code, I made `File Diagram` first, then got angry and the ugly code, so I made `Chapter 13 Asgn` which looks cleaner due to the `vector`s and automatic drawing. At this point I'm just speculating; I have really no clue how to explain any of this.
+
+### Chapter 14 Drill - Virtual Functions
+
+Virtual functions and pure-virtual functions are the pits. After having dealt with these little buggers, I was very appreciative of the simple elegance of Objective-C.
+
+### Chapter 15 Asgn
+
+I knew that I had built something which graphed stuff before, though I couldn't for the life of me remember when or where or why. It's good to know that I've at least found it again.
+
+### Chapter 16 Asgn
+
+This is the first time we got input from the FLTK GUI system as far as I can tell.
+
+### Chapter 19 Asgn
+
+Data structure programming is fun, and here we got to make a linked list.
+
+### Date
+
+Some kind of custom date class.
+
+### File Diagram
+
+This one was pretty difficult because it involved drawing an arrow. Determining the proper place to stick the arrowhead and how to rotate it, etc, is pretty darn hard. Some supergenius in class got us an equation to use for that purpose, and it seems to work fairly well. Now that I've taken more Calculus (and ostensibly been molested by more trig) I'm sure I could do pretty well by myself now, but for the time, it was a Godsend. This appears to try and draw the reference image from http://cdn.fsdev.net/filegraph.png which is amazingly still hanging around on my CDN.
+
+This seems redundant to my `File Diagram` work in CS116, so I'm not sure what I have two copies for. But they're different. Judging by the naming and the code, I made `File Diagram` first, then got angry and the ugly code, so I made `Chapter 13 Asgn` which looks cleaner due to the `vector`s and automatic drawing. At this point I'm just speculating; I have really no clue how to explain any of this.
+
+### LinkedList0
+
+Maybe this was a first stab at Chapter 17's assignment?
+
+### LinkedList1
+
+OK, now I know this isn't me. I don't do extra credit... do I?
+
+### Multifile
+
+I think this was just getting stuff to load across files properly.
+
+### Name Pairs
+
+Also known as a Map or Dictionary, this is very advanced technology that only second-semester C++ students can butcher in an implementation-specific manner.
+
+### Namespace Fun
+
+Namespaces yoh, they be all up in yo business! In reality I don't have a clue what the point of this assignment was.
+
+### Order of Evaluation
+
+Is it wrong of me to read this code and only be able to wonder what the compiler intrinsic for the `XCHNG` opcode is?
+
+### PG165
+
+A truly horrifying number of simple source files relating to a bunch of exercises from the mythical 165th page. Some of these answers are actually kind of witty.
+
+### Sieve of Eroatosthenes
+
+The amazing unpronounceable means of finding prime numbers. I have a much better version in assembler.
+
+### Temp Calc
+
+To me this was actually really cool, and it's one of the four or so assignments from this course I really remember years later. It showed how to use STL's `iostream` library for the purpose of object serialization. I'm a meticulous nut when it comes to serialization, just look at any of my `NSCoder` code. This was actually really cool to me.
+
+### Week Map
+
+Not sure what this is supposed to do. Perhaps it will make sense to me someday?
+
 ## CS118
 
-Yay x86 assembler work! All done using MASM.
+Yay x86 assembler work, all done using MASM!
 
 ## CS172
 
