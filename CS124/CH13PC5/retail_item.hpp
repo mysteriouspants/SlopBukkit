@@ -6,8 +6,7 @@ class RetailItem {
 	double _price;
 public:
 	RetailItem();
-	RetailItem(const char*,int,double);
-	RetailItem(const std::string&&,int,double);
+	RetailItem(std::string&&,int,double);
 
 	std::string getDescription() const;
 	void setDescription(const std::string&&);

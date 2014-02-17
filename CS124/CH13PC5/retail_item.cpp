@@ -2,10 +2,7 @@
 
 RetailItem::RetailItem() : _description(""), _unitsOnHand(0), _price(0.0f) { }
 
-RetailItem::RetailItem(const char* description,int unitsOnHand,double price) :
-	_description(description), _unitsOnHand(unitsOnHand), _price(price) { }
-
-RetailItem::RetailItem(const std::string&& description,int unitsOnHand,double price) :
+RetailItem::RetailItem(std::string&& description,int unitsOnHand,double price) :
 	_description(description), _unitsOnHand(unitsOnHand), _price(price) { }
 
 std::string RetailItem::getDescription() const { return _description; }
