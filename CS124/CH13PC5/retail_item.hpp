@@ -7,10 +7,10 @@ class RetailItem {
 public:
 	RetailItem();
 	RetailItem(const char*,int,double);
-	RetailItem(std::string&,int,double);
+	RetailItem(const std::string&&,int,double);
 
 	std::string getDescription() const;
-	void setDescription(std::string&);
+	void setDescription(const std::string&&);
 
 	int getUnitsOnHand() const;
 	void setUnitsOnHand(int);
