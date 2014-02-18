@@ -1,3 +1,9 @@
+/*! Chris Miller (imperator@pax-imperia.com), CS124
+ *! Copyright (C) 2014 Chris Miller.  Aw richts pitten by.
+ *! Academic endorsement.  This code is not licensed for commercial use.
+ *! 20140217, Chapter 13 Programming Challenge 5
+ */
+
 #include "retail_item.hpp"
 
 RetailItem::RetailItem() : _description(""), _unitsOnHand(0), _price(0.0f) { }

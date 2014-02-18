@@ -1,3 +1,9 @@
+/*! Chris Miller (imperator@pax-imperia.com), CS124
+ *! Copyright (C) 2014 Chris Miller.  Aw richts pitten by.
+ *! Academic endorsement.  This code is not licensed for commercial use.
+ *! 20140217, Chapter 13 Programming Challenge 5
+ */
+
 #include <string>
 
 #ifndef RETAIL_ITEM_HPP
