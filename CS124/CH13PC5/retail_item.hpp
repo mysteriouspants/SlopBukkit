@@ -1,5 +1,8 @@
 #include <string>
 
+#ifndef RETAIL_ITEM_HPP
+#define RETAIL_ITEM_HPP
+
 class RetailItem {
 	std::string _description;
 	int _unitsOnHand;
@@ -17,3 +20,5 @@ public:
 	double getPrice() const;
 	void setPrice(double);
 };
+
+#endif
