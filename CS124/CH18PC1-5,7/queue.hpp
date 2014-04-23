@@ -1,7 +1,7 @@
 /* Chris Miller (imperator@pax-imperia.com), CS124
  * Copyright (C) 2014 Chris Miller.  Aw richts pitten by.
  * Academic endorsement.  This code is not licensed for commercial use.
- * 20140418, Chapter 18 Programming Challenge 1 - 5
+ * 20140422, Chapter 18 Programming Challenge 1 - 5, 7
  */
 
  #ifndef __QUEUE_HPP__
@@ -90,9 +90,21 @@ public:
   }
   void enq(const T& t) {
     if (back_ptr == NULL) {
-      front_ptr = back_ptr = new node(t);
+      try {
+        front_ptr = back_ptr = new node(t);
+      } catch (bad_alloc e) {
+        /* frankly it's better to bubble this up to the calling code, */
+        /* but no failure response was defined by the assignment, so  */
+        /* you get nothing                                            */
+      }
     } else {
-      back_ptr = back_ptr->next = new node(t);
+      try {
+        back_ptr = back_ptr->next = new node(t);
+      } catch (bad_alloc e) {
+        /* frankly it's better to bubble this up to the calling code, */
+        /* but no failure response was defined by the assignment, so  */
+        /* you get nothing                                            */
+      }
     }
   }
   void __pretty_print__() const {

@@ -1,7 +1,7 @@
 /* Chris Miller (imperator@pax-imperia.com), CS124
  * Copyright (C) 2014 Chris Miller.  Aw richts pitten by.
  * Academic endorsement.  This code is not licensed for commercial use.
- * 20140418, Chapter 18 Programming Challenge 1 - 5
+ * 20140422, Chapter 18 Programming Challenge 1 - 5, 7
  */
 
 #ifndef __STACK_HPP__
@@ -18,7 +18,7 @@ using namespace std;
 /* static stack template */
 template<class T>
 class static_stack {
-private:
+protected:
   size_t size;
   size_t top_idx;
   T * data;
@@ -54,7 +54,7 @@ public:
 
 template<class T>
 class dynamic_stack {
-private:
+protected:
   struct node {
     T data;
     node * next;
@@ -85,7 +85,13 @@ public:
     if (top_ptr == NULL) {
       top_ptr = bottom_ptr = new node(t);
     } else {
-      top_ptr = new node(t, top_ptr);
+      try {
+        top_ptr = new node(t, top_ptr);
+      } catch (bad_alloc e) {
+        /* frankly it's better to bubble this up to the calling code, */
+        /* but no failure response was defined by the assignment, so  */
+        /* you get nothing                                            */
+      }
     }
   }
   void __pretty_print__() const {
