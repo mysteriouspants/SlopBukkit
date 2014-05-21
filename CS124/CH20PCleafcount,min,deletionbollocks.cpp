@@ -38,14 +38,14 @@ class binary_tree {
     if (clay->right) { pretty_print_leaves_r(os, clay->right); }
   }
   size_t count_r(node * clay) const {
-    if (clay) {
+    if (clay != NULL) {
       return 1 + count_r(clay->left) + count_r(clay->right);
     } else {
       return 0;
     }
   }
   size_t leaf_count_r(node * clay) const {
-    if (clay) {
+    if (clay != NULL) {
       if (clay->left || clay->right) {
         return leaf_count_r(clay->left) + leaf_count_r(clay->right);
       } else {
@@ -61,6 +61,35 @@ class binary_tree {
       else { return clay->data; }
     } else {
       return (T)NULL; // NOT PRODUCTIONABLE!
+    }
+  }
+  void delete_r(T needle, node * &haystack) {
+    if (haystack == NULL) { return; } // not of deleting the NULL
+    if (needle < haystack->data) {
+      delete_r(needle, haystack->left);
+    } else if (needle > haystack->data) {
+      delete_r(needle, haystack->right);
+    } else if (needle == haystack->data) {
+      node * temp_ptr;
+      if (haystack->right == NULL) {
+        temp_ptr = haystack;
+        haystack = haystack->left;
+        temp_ptr->right = temp_ptr->left = NULL;
+        delete temp_ptr;
+      } else if (haystack->left == NULL) {
+        temp_ptr = haystack;
+        haystack = haystack->right;
+        temp_ptr->right = temp_ptr->left = NULL;
+        delete temp_ptr;
+      } else { // two kebabs, of being white picket fence
+        temp_ptr = haystack->right;
+        while (temp_ptr->left) { temp_ptr = temp_ptr->left; }
+        temp_ptr->left = haystack->left;
+        temp_ptr = haystack;
+        haystack = haystack->right;
+        temp_ptr->right = temp_ptr->left = NULL;
+        delete temp_ptr;
+      }
     }
   }
 public:
@@ -89,6 +118,13 @@ public:
     if (root) { pretty_print_leaves_r(os, root); }
     os << "}" << endl;
   }
+  void remove(T t) {
+    delete_r(t, root);
+  }
+  T what_is_root() const { // baby don't balance me, don't balance me
+    if (root) { return root->data; }
+    else { return (T)NULL; } // NOT PRODUCTIONABLE
+  } // no more
 };
 
 int main(int argc, char *argv[]) {
@@ -112,6 +148,14 @@ int main(int argc, char *argv[]) {
         << " leaves with smallest value of " << t2.min()
         << ": "; t2.pretty_print(cout);
   cout  << " and leaves: "; t2.pretty_print_leaves(cout);
+  
+  cout  << "for mein next magic trick, i shall be of deleting all root nodes!" << endl;
+  cout << "status of t2: "; t2.pretty_print(cout);
+  while (t2.count() > 0) {
+    cout << "removing " << t2.what_is_root() << ": ";
+    t2.remove(t2.what_is_root());
+    t2.pretty_print(cout);
+  }
   
   return 0;
 }
